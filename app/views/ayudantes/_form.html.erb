@@ -11,34 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field ">
-    <%= f.label :rut %><br>
-    <%= f.number_field :rut %>
-  </div>
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :apellido %><br>
-    <%= f.text_field :apellido %>
-  </div>
-  <div class="field">
-    <%= f.label :asignatura %><br>
-    <%= f.text_field :asignatura %>
-  </div>
+
+ 
   <div class="field">
     <%= f.label :carrera %><br>
     <%= f.text_field :carrera %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit'Guardar',class:"btn btn-success btn-sm  btn-lg active" %>
   </div>
-<% end %>
+
 
 
 
@@ -47,13 +30,14 @@
       <div class="row">
         <div class="input-field col s4">
           <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Nombre</label>
+          <%= f.label :nombre %><br>
+          <%= f.text_field :nombre %>
         </div>
+
         <div class="input-field col s4">
           <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_telephone">Apellido</label>
+          <%= f.label :apellido %><br>
+          <%= f.text_field :apellido %>
         </div>
       </div>
     </form>
@@ -64,13 +48,13 @@
       <div class="row">
         <div class="input-field col s4">
           <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">RUT</label>
+          <%= f.label :rut %>
+          <%= f.number_field :rut %>
         </div>
         <div class="input-field col s4">
           <i class="material-icons prefix">markunread_mailbox</i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Email</label>
+          <%= f.label :email %><br>
+          <%= f.text_field :email %>
         </div>
       </div>
     </form>
@@ -81,29 +65,24 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s4">
-          <i class="material-icons prefix">mode_edit</i>
+          <i class="material-icons prefix">business</i>
           <input id="icon_prefix" type="text" class="validate">
           <label for="icon_prefix">Carrera</label>
         </div>
-        <div class="input-field col s4">
-          <i class="material-icons prefix">mode_edit</i>
-          <select>
-      <option value="" disabled selected>Eliga una opción.</option>
-      <option value="1">Calculo I</option>
-      <option value="2">Algebra I</option>
-      <option value="3">Física Clásica</option>
-      <option value="3">Química General</option>
-    </select>
-          <label for="icon_prefix">Asignatura</label>
-        </div>
-      </div>
+
+
     </form>
   </div>
 
+<div class="control-group">
+    <%= f.label "Asignatura", class: 'control-label' %>
+    <div class="controls">
+      <%= f.select(:asignatura, options_for_select([['Algebra I', 'Algebra I'], ['Calculo I', 'Calculo I'],['Química General', 'Química General']]), { prompt: 'Seleccione una opción' }) %>
+</div>
+</div>
 
 
 
-
-  
+<% end %>
 
 
