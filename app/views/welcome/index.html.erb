@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel='stylesheet'>
   
-</head>
+  
+
 <body>
 
 
@@ -20,7 +17,8 @@
           <h5 class="header col s12 light">¿Quieres ser parte de este novedoso proyecto?</h5>
         </div>
         <div class="row center">
-          <a href="http://localhost:3000/ayudantes/new" id="download-button" class="btn-large waves-effect waves-light teal lighten-2">¡Quiero Unirme!</a>
+        <%= link_to "¡Quiero Unirme!", new_ayudante_path(@ayudante), class: "btn-large waves-effect waves-light teal lighten-2" %>
+          
         </div>
         <br><br>
 
@@ -150,10 +148,12 @@
   </footer>
 
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+
+
+  <script>$(document).ready(function(){
+    $('.parallax').parallax();
+});
+</script>
 
   </body>
 </html>
